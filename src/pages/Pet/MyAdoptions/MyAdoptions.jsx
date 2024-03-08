@@ -8,7 +8,7 @@ const MyAdoptions = () => {
     const [token] = useState(localStorage.getItem('token') || "");
 
     useEffect(() => {
-        api.get('/pets/mypets', {
+        api.get('/pets/myadoptions', {
             headers: {
                 Authorization: `Bearer ${JSON.parse(token)}`,
             }
