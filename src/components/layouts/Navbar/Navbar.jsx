@@ -1,64 +1,62 @@
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import Logo from '../../../assets/img/logo.png';
-import styles from './Navbar.module.css';
 import { Context } from '../../../context/UserContext';
 import { useContext } from 'react';
+import './Navbar.css';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-
     const { authenticated, logout } = useContext(Context);
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+    };
 
     return (
-        <nav className={`${styles.navbar} d-flex justify-content-between align-items-center navbar navbar-expand-sm navbar`}>
-            <div className="container">
-                <div className='d-flex align-items-center justify-content-center me-2'>
-                    <img className={styles.dog} src={Logo} alt="Get a Pet" />
-                    <h2>Get a Pet</h2>
-                </div>
-                <div className="d-flex flex-column justify-content-end">
-                    <button
-                        className="navbar-toggler"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarNav"
-                        aria-controls="navbarNav"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                    >
-                        <i className="bi bi-text-left"></i>
-                    </button>
-                    <ul className="navbar-nav collapse navbar-collapse list-unstyled" id="navbarNav">
-                        <li className='links nav-item me-3 mb-1'>
-                            <Link className={styles.navbarLink} to='/'>Adotar</Link>
-                        </li>
-                        {authenticated ? (
-                            <>
-                                <li className={`${styles.navbarLi} nav-item list-unstyled mr-3 px-4 py-3`}>
-                                    <Link className={styles.navbarLink} to='/pet/mypets'>Meus Pets</Link>
-                                </li>
-                                <li className={`${styles.navbarLi} nav-item list-unstyled mr-3 px-4 py-3`}>
-                                    <Link className={styles.navbarLink} to='/pet/adoptions'>Minhas Adoções</Link>
-                                </li>
-                                <li className={`${styles.navbarLi} nav-item list-unstyled mr-3 px-4 py-3`}>
-                                    <Link className={styles.navbarLink} to='/user/profile'>Perfil</Link>
-                                </li>
-                                <li onClick={logout} className={`${styles.navbarLi} nav-item list-unstyled mr-3 px-4 py-3`}>
-                                    Sair
-                                </li>
-                            </>
-                        ) : (
-                            <>
-                                <li className={`${styles.navbarLi} nav-item list-unstyled mr-3 px-4 py-3`}>
-                                    <Link className={styles.navbarLink} to='/login'>Entrar</Link>
-                                </li>
-                                <li className={`${styles.navbarLi} nav-item list-unstyled mr-3 px-4 py-3`}>
-                                    <Link className={styles.navbarLink} to='/register'>Registrar</Link>
-                                </li>
-                            </>
-                        )}
-                    </ul>
-                </div>
+        <nav className='navbar d-flex justify-content-space-between'>
+            <div className='navbarLogo d-flex justify-content-center align-items-center'>
+                <img className='dog' src={Logo} alt="Get a Pet" />
+                <h2>Get a Pet</h2>
             </div>
+
+            <input type="checkbox" id="nav-toggle" className="nav-toggle visually-hidden" checked={menuOpen} onChange={toggleMenu} />
+            <label htmlFor="nav-toggle" className="nav-toggle-label">
+                <span></span>
+            </label>
+
+            <ul className={`d-flex justify-content-space-around p-0 m-0 align-items-center navbarUl ${menuOpen ? 'open' : ''}`}>
+                <li className='navbarLi'>
+                    <Link className='navbarLink' to='/'>Adotar</Link>
+                </li>
+                {authenticated ?
+                    (
+                        <>
+                            <li className='navbarLi'>
+                                <Link className='navbarLink' to='/pet/mypets'>Meus Pets</Link>
+                            </li>
+                            <li className='navbarLi'>
+                                <Link className='navbarLink' to='/pet/adoptions'>Minhas Adoções</Link>
+                            </li>
+                            <li className='navbarLi'>
+                                <Link className='navbarLink' to='/user/profile'>Perfil</Link>
+                            </li>
+                            <li onClick={logout} className='navbarLi'>
+                                Sair
+                            </li>
+                        </>
+                    ) : (
+                        <>
+                            <li className='navbarLi'>
+                                <Link className='navbarLink' to='/login'>Entrar</Link>
+                            </li>
+                            <li className='navbarLi'>
+                                <Link className='navbarLink' to='/register'>Registrar</Link>
+                            </li>
+                        </>
+                    )
+                }
+            </ul>
         </nav>
     );
 };

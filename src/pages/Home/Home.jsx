@@ -13,8 +13,6 @@ const Home = () => {
         })
     }, [])
 
-    console.log("pets:", pets)
-
     return (
         <section>
             <div className={styles.petHomeHeader}>
