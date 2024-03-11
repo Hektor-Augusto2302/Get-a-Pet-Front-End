@@ -1,8 +1,8 @@
-import styles from './SelectForm.module.css';
+import './SelectForm.css';
 
 const SelectForm = ({text, name, options, handleOnChange, value }) => {
     return (
-        <div className={styles.formSelect}>
+        <div className='formSelect d-flex flex-column mb-2'>
             <label htmlFor={name}>{text}</label>
             <select name={name} id={name} onChange={handleOnChange} value={value || ""}>
                 <option>Selecione uma opção</option>

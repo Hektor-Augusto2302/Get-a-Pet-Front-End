@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
 import Input from '../../../components/form/Input';
-import styles from '../../../components/form/Form.module.css';
+import '../../../components/form/Form.css';
 import { Context } from '../../../context/UserContext';
 import { Link } from 'react-router-dom';
 
@@ -20,7 +20,7 @@ const Login = () => {
     }
 
     return (
-        <section className={styles.formContainer}>
+        <section className='formContainer'>
             <h1>Login</h1>
             <form onSubmit={handeleSubmit}>
                 <Input

@@ -1,6 +1,6 @@
 import {useContext, useState} from 'react';
 import Input from '../../../components/form/Input';
-import styles from '../../../components/form/Form.module.css';
+import '../../../components/form/Form.css';
 import { Link } from 'react-router-dom';
 import {Context} from '../../../context/UserContext';
 
@@ -19,7 +19,7 @@ const Register = () => {
     };
 
     return (
-        <section className={styles.formContainer}>
+        <section className='formContainer'>
             <h1>Registrar</h1>
             <form onSubmit={handeleSubmit}>
                 <Input

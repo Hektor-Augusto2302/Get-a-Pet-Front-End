@@ -1,5 +1,5 @@
 import styles from './Profile.module.css';
-import formStyles from '../../components/form/Form.module.css';
+import '../../components/form/Form.css';
 import Input from '../../components/form/Input';
 import { useState, useEffect } from 'react';
 import api from '../../utils/api';
@@ -73,7 +73,7 @@ const Profile = () => {
                     />
                 )}
             </div>
-            <form onSubmit={handeleSubmit} className={formStyles.formContainer}>
+            <form onSubmit={handeleSubmit} className='formContainer'>
                 <Input
                     text='imagem'
                     type='file'

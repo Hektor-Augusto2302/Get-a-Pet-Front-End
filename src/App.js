@@ -9,7 +9,6 @@ import MyPets from './pages/Pet/MyPets/MyPets';
 // components
 import Navbar from './components/layouts/Navbar/Navbar';
 import Footer from './components/layouts/Footer/Footer';
-import Container from './components/layouts/Container/Container';
 import Message from './components/layouts/Message/Message';
 import Profile from './pages/User/Profile';
 import AddPet from './pages/Pet/AddPet/AddPet';
@@ -26,7 +25,7 @@ function App() {
       <UserProvider>
         <Navbar />
         <Message />
-        <Container>
+        <div className="container my-5">
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/login' element={<Login />} />
@@ -38,7 +37,7 @@ function App() {
             <Route path='/pet/:id' element={<PetDetails />} />
             <Route path='/pet/adoptions' element={<MyAdoptions />} />
           </Routes>
-        </Container>
+        </div>
         <Footer />
       </UserProvider>
     </BrowserRouter>

@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './Footer.module.css';
+import './Footer.css';
 
 const Footer = () => {
     return (
-        <footer className={styles.footer}>
+        <footer className='footer d-flex align-items-center justify-content-center '>
             <p>
                 <span className='bold'>Get a Pet</span> &copy; 2023
             </p>

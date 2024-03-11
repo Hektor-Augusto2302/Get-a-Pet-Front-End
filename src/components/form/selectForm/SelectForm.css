@@ -1,9 +1,3 @@
-.formSelect {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1em;
-}
-
 .formSelect label {
     margin-bottom: .6em;
     font-weight: bold;

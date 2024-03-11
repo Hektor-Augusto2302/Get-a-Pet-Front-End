@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from '../Form.module.css';
+import '../Form.css';
 import Input from '../Input';
 import SelectForm from '../selectForm/SelectForm';
 
@@ -27,8 +27,8 @@ const PetForm = ({ handleSubmit, petData, btnText }) => {
     }
 
     return (
-        <form onSubmit={submit} className={styles.formContainer}>
-            <div className={styles.previewPetsImages}>
+        <form onSubmit={submit} className='formContainer '>
+            <div className='previewPetsImages'>
                 {preview.length > 0 ?
                     preview.map((image, index) => (
                         <img

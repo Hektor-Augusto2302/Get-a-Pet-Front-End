@@ -34,12 +34,6 @@
     font-weight: bold;
 }
 
-.previewPetsImages {
-    display: flex;
-    justify-content: center;
-    margin: 1em;
-}
-
 .previewPetsImages img {
     width: 100px;
     height: 100px;
