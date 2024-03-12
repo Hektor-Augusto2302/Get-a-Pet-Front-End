@@ -1,8 +1,8 @@
-import styles from './Input.module.css'
+import'./Input.css';
 
 const Input = ({ type, text, name, placeholder, handleOnChange, value, multiple }) => {
     return (
-        <div className={styles.formControl}>
+        <div className='d-flex flex-column mb-2'>
             <label htmlFor={name}>{text}:</label>
             <input
                 type={type}
