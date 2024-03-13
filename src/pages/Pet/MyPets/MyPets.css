@@ -1,15 +1,4 @@
 .petListHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2em;
-}
-
-.petListHeader h1 {
-    margin: 0;
-}
-
-.petListHeader a {
     text-decoration: none;
     background-color: #16479d;
     color: #fff;
@@ -20,31 +9,14 @@
     border: 2px solid #16479d;
 }
 
-.petListHeader a:hover {
+.petListHeader:hover {
     background-color: transparent;
     color: #16479d;
 }
 
-.petListContainer {
-    display: flex;
-    flex-direction: column;
-}
-
 .petListRow {
     border-bottom: 1px solid #16479d;
-    padding: 1em;
-    margin: 1em;
-    display: flex;
-    align-items: center;
     width: 100%;
-}
-
-.petListRow img {
-    margin-right: 1em;
-}
-
-.petListRow span {
-    min-width: 100px;
 }
 
 .actions {

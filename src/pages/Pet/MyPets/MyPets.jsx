@@ -1,4 +1,4 @@
-import styles from './MyPets.module.css';
+import './MyPets.css';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import RoundedImage from '../../../components/layouts/RoundedImage/RoundedImage';
@@ -58,26 +58,26 @@ const MyPets = () => {
 
     return (
         <section>
-            <div className={styles.petListHeader}>
-                <h1>Meus Pets</h1>
-                <Link to='/pet/add'>Cadastrar Pet</Link>
+            <div className='d-flex justify-content-between align-items-center mb-3'>
+                <h1 className='m-0'>Meus Pets</h1>
+                <Link className='petListHeader' to='/pet/add'>Cadastrar Pet</Link>
             </div>
-            <div className={styles.petListContainer}>
+            <div className='d-flex flex-column'>
                 {pets.length > 0 && 
                     pets.map((pet) => (
-                        <div className={styles.petListRow} key={pet._id}>
+                        <div className='petListRow d-flex align-items-center m-3 p-3' key={pet._id}>
                             <RoundedImage 
                                 src={`${process.env.REACT_APP_API}/images/pets/${pet.images[0]}`}
                                 alt={pet.name}
                                 width="px75"
                             />
                             <span className='bold'>{pet.name}</span>
-                            <div className={styles.actions}>
+                            <div className='actions'>
                                 {pet.available ? (
                                     <>
                                         {pet.adopter && (
                                             <button 
-                                                className={styles.concludeBtn}
+                                                className='concludeBtn'
                                                 onClick={() => concludedAdoptions(pet._id)}
                                             >
                                                 Concluir adoção

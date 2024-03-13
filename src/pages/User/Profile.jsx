@@ -1,4 +1,3 @@
-import styles from './Profile.module.css';
 import '../../components/form/Form.css';
 import Input from '../../components/form/Input';
 import { useState, useEffect } from 'react';
@@ -60,7 +59,7 @@ const Profile = () => {
 
     return (
         <section>
-            <div className={styles.profileHeader}>
+            <div className='text-center mb-3'>
                 <h1>Perfil</h1>
                 {(user.image || preview) && (
                     <RoundedImage
