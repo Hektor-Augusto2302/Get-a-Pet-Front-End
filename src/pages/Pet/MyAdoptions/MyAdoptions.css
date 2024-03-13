@@ -1,25 +1,5 @@
-.petListHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2em;
-}
-
-.petListHeader h1 {
-    margin: 0;
-}
-
-.petListContainer {
-    display: flex;
-    flex-direction: column;
-}
-
 .petListRow {
     border-bottom: 1px solid #16479d;
-    padding: 1em;
-    margin: 1em;
-    display: flex;
-    align-items: center;
     width: 100%;
 }
 
@@ -33,14 +13,6 @@
 
 .actions {
     margin-left: auto;
-}
-
-.contacts {
-    margin-left: 2em;
-}
-
-.contacts p {
-    margin-bottom: 0.5em;
 }
 
 @media only screen and (max-width: 600px) {

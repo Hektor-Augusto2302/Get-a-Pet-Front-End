@@ -1,3 +1,4 @@
+import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // pages
@@ -25,7 +26,7 @@ function App() {
       <UserProvider>
         <Navbar />
         <Message />
-        <div className="container my-5">
+        <div className="container app-vh my-5">
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/login' element={<Login />} />

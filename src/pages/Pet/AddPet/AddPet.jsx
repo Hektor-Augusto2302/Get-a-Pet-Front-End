@@ -1,4 +1,3 @@
-import styles from './AddPet.module.css';
 import api from '../../../utils/api';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -45,9 +44,9 @@ const AddPet = () => {
     };
 
     return (
-        <section className={styles.addPetHeader}>
+        <section className='text-center mb-1'>
             <div>
-                <h1>Cadastre um Pet</h1>
+                <h1 className='mb-1'>Cadastre um Pet</h1>
                 <p>Depois ele ficara disponivel para adoção</p>
             </div>
             <PetForm

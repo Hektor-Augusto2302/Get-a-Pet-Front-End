@@ -1,7 +1,6 @@
 import api from '../../utils/api';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-
 import'./Home.css';
 
 const Home = () => {

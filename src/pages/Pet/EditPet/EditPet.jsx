@@ -1,4 +1,3 @@
-import styles from '../AddPet/AddPet.module.css';
 import api from '../../../utils/api';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -51,9 +50,9 @@ const EditPet = () => {
     };
 
     return (
-        <section className={styles.addPetHeader}>
+        <section className='text-center mb-1'>
             <div>
-                <h1>Editando o {pet.name}</h1>
+                <h1 className='mb-1'>Editando o {pet.name}</h1>
             </div>
             {pet.name && (
                 <PetForm
